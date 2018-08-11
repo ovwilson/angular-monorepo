@@ -35,4 +35,4 @@ class DynamicRouter {
     }
 }
 
-export const settingsRouter = new DynamicRouter();
+export default new DynamicRouter();

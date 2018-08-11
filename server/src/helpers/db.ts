@@ -15,6 +15,7 @@ export class DB {
     mongoose.connection.on('error', () =>
       console.error(`MongoDb connection error for ${process.env.LOCAL_DB}`)
     );
+    return mongoose.connection;
   }
   createConnection() {
     return mongoose.createConnection(process.env.LOCAL_DB, {

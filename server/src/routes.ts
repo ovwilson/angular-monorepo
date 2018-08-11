@@ -1,6 +1,6 @@
 import * as express from 'express';
 import { indexRouter } from './routes/Index';
-// import { settingsRouter } from './routes/Settings';
+import { default as dynamicRouter } from './routes/Dynamic';
 import { default as counterRouter } from './routes/Counter';
 
 class Routes {
@@ -14,6 +14,7 @@ class Routes {
 
   public setIndex() {
     this.router.route('/').get(indexRouter);
+    this.router.route('dynamic').post(dynamicRouter.create);
   }
 
   public setCounters() {

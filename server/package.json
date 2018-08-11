@@ -8,7 +8,7 @@
     "build-ts": "tsc",
     "watch-ts": "tsc -w",
     "mongod": "tsc scripts//mongodb//mongod.ts && node scripts//mongodb//mongod.js",
-    "start": "node_modules//.bin//ts-node-dev src//server.ts",
+    "start": "ts-node-dev src//server.ts",
     "server-stop": "pm2 stop dist//server.js",
     "monit": "pm2 monit"
   },
