@@ -34,6 +34,7 @@ class Routes {
 
     this.router.route('*')
       .get(crudRoutes.get)
+      .post(crudRoutes.create)
       .delete(crudRoutes.deleteAll);
   }
 

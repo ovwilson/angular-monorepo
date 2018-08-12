@@ -34,23 +34,24 @@ class Store {
         };
         models.map(m => {
             state.names = [...state.names, m.name];
-            state.entities = Object.assign(state.entities, { [m.name]: this.createModel(m.name, m.attributes) });
+            state.entities = Object.assign(state.entities, { [m.name]: this.createModel(m.name, m.documents) });
         });
         this.models$.next({ models: state });
     }
 
-    createModel = (name: string, attributes: any[]) => {
+    createModel = (name: string, documents: any[]) => {
         let data = {};
-        attributes.map(d => data = Object.assign(data, { [d.name]: this.getType(d.type) }));
+        documents.map(d => data = Object.assign(data, { [d.name]: this.getType(d.type) }));
         let schema = new Schema(data);
+        console.log(data)
         schema = this.addDefaults(schema);
         return model(name, schema);
     }
 
     getType = (type: string) => {
         switch (type) {
-            case 'String': return String;
-            case 'Number': return Number;
+            case 'string': return String;
+            case 'number': return Number;
             case 'Date': return Date;
             default: return String;
         }

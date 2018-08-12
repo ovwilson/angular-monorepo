@@ -1,14 +1,14 @@
-import * as faker from 'faker';
-import { Schema, model, Model, Document } from 'mongoose';
+// import * as faker from 'faker';
+// import { Schema, model, Model, Document } from 'mongoose';
 
 export interface Table {
     name: string;
     attributes(): any;
 }
 
-export const tables: Table[] = [
-    { name: 'Setting', attributes: () => Object.assign({}, { title: faker.company.companyName(), description: faker.lorem.paragraph() }) }
-];
+//export const tables: Table[] = [
+//    { name: 'Setting', attributes: () => Object.assign({}, { title: faker.company.companyName(), description: faker.lorem.paragraph() }) }
+//];
 
 export class NumberGenerator {
     startNum: number;

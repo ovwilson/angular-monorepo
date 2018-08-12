@@ -3,6 +3,11 @@
 context('User CRUD Requests', () => {
 
     const uri = '/users';
+    const model = {
+        firstName:'Joe',
+        lastName:'Blow',
+        email:'joeblow@jb.com'
+    }
 
 
     beforeEach(() => {
@@ -14,7 +19,16 @@ context('User CRUD Requests', () => {
         cy.request('DELETE', uri)
             .then((response) => {
                 expect(response.status).to.eq(200);
-                expect(response).to.have.property('headers');
+                cy.log(response.body.status)
+            })
+    })
+
+    it('Schema Create User', () => {
+
+        cy.request('POST', uri, model)
+            .then((response) => {
+                expect(response.status).to.eq(200);
+                cy.log(`First Name: ${response.body.firstName}`)
             })
     })
 
@@ -23,7 +37,7 @@ context('User CRUD Requests', () => {
         cy.request('GET', uri)
             .then((response) => {
                 expect(response.status).to.eq(200);
-                expect(response).to.have.property('headers');
+                cy.log(`${response.body.length} records found.`)
             })
     })
 

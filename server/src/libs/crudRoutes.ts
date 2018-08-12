@@ -29,7 +29,16 @@ class CRUDRoutes {
 
 
     create(request: Request, response: Response) {
-        SchemaModel.create({ name: request.url }, (err: any, data: any) => err ? response.status(500).send(err) : response.json(data));
+
+        const schemaName = fromUtils.convertName(request.url);
+        const schema = SchemaModel.findOne({ name: schemaName },
+            (err: any, data: any) => err ? response.status(500).send(err) : data);
+        schema.then((v) => {
+            stores.modelsSubscription$.subscribe(state => {
+                state.models.entities[v.name].create({ name: request.url },
+                    (err: any, data: any) => err ? response.status(500).send(err) : response.json(data));
+            }).unsubscribe();
+        });
     }
 
     updateById(request: Request, response: Response) {
