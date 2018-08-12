@@ -3,7 +3,7 @@ import * as session from 'express-session';
 import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 import { default as routes } from './routes';
-import { DB } from './helpers/db';
+import { DB } from './libs/db';
 
 class Server {
   public app: express.Application;

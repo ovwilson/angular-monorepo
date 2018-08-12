@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
-import { default as Model, schema, schemaName, IDocument, IModel } from './../models/Dynamic';
+import Model from './../models/Schema';
 
-class DynamicRouter {
+class SchemaRouter {
 
     constructor() { }
 
@@ -19,7 +19,7 @@ class DynamicRouter {
 
     updateById(request: Request, response: Response) {
         const query = { id: request.params.id },
-            update = { title: request.body.title, description: request.body.description };
+            update = request.body;
         Model.findOneAndUpdate(query, update, (err: any, data: any) =>
             err ? response.status(500).send(err) : response.json(data));
     }
@@ -35,4 +35,4 @@ class DynamicRouter {
     }
 }
 
-export default new DynamicRouter();
+export default new SchemaRouter();

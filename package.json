@@ -6,8 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "test-server": "mocha -r ts-node/register server/test/*.spec.ts --watch --watch-extensions spec.ts",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "mongod": "tsc server//scripts//mongodb//mongod.ts && node server//scripts//mongodb//mongod.js",
+    "cypress:open": "cypress open"
   },
   "private": true,
   "dependencies": {
@@ -20,7 +23,6 @@
     "@angular/platform-browser": "^6.1.0",
     "@angular/platform-browser-dynamic": "^6.1.0",
     "@angular/router": "^6.1.0",
-    "adm-zip": "^0.4.11",
     "core-js": "^2.5.4",
     "rxjs": "^6.0.0",
     "zone.js": "~0.8.26"
@@ -36,6 +38,7 @@
     "@types/node": "~8.9.4",
     "angular-playground": "^5.0.1",
     "codelyzer": "~4.2.1",
+    "cypress": "^3.0.3",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~1.7.1",

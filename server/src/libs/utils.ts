@@ -1,6 +1,7 @@
-const faker = require('faker');
+import * as faker from 'faker';
+import { Schema, model, Model, Document } from 'mongoose';
 
-interface Table {
+export interface Table {
     name: string;
     attributes(): any;
 }
@@ -15,3 +16,12 @@ export class NumberGenerator {
     increment() { this.startNum++; }
     get nextNumber() { this.increment(); return this.startNum; }
 }
+
+export const properCase = (str: string): string =>
+    str.replace(/\w\S*/g, function (txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+
+export const convertName = (str: string): string => {
+    const name = str.slice(1, str.length - 1);
+    return properCase(name);
+};
+

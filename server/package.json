@@ -4,10 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -r ts-node/register test/*.spec.ts --watch --watch-extensions spec.ts",
-    "build-ts": "tsc",
-    "watch-ts": "tsc -w",
-    "mongod": "tsc scripts//mongodb//mongod.ts && node scripts//mongodb//mongod.js",
     "start": "ts-node-dev src//server.ts",
     "server-stop": "pm2 stop dist//server.js",
     "monit": "pm2 monit"
