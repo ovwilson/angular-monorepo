@@ -3,7 +3,7 @@ import { indexRouter } from './routes/Index';
 import counterRouter from './routes/Counter';
 import schemaRouter from './routes/Schemas';
 import dynamicRoutes from './libs/dynamicRoutes';
-import {} from './libs/utils';
+import { setModels } from './libs/utils';
 
 class Routes {
   public router: express.Router;
@@ -30,6 +30,8 @@ class Routes {
   }
 
   public setDynamicRoutes() {
+
+    setModels();
 
     this.router.route('*')
       .get(dynamicRoutes.get)

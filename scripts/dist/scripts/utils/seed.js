@@ -1,11 +1,9 @@
-import { of } from 'rxjs';
-import { concatAll, take } from 'rxjs/operators';
-import * as faker from 'faker';
-import { default as Seed } from './utils';
-import { Store } from './../models/store';
-import { ISchema } from '../../server/src/models/Schema';
-
-const schemas: ISchema[] = [
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const rxjs_1 = require("rxjs");
+const operators_1 = require("rxjs/operators");
+const utils_1 = require("./utils");
+const schemas = [
     {
         name: 'User',
         url: '/users',
@@ -17,8 +15,7 @@ const schemas: ISchema[] = [
         ]
     }
 ];
-
-const store: Store = {
+const store = {
     fileName: 'cypress/fixtures/db.json',
     fileFormat: 'utf8',
     file: '',
@@ -31,11 +28,8 @@ const store: Store = {
     schemaFaker: null,
     contents: {}
 };
-
-const seed = new Seed(store);
-
-const createSeed$ = of(
-    seed.addSeed$.pipe(take(1)),
-    seed.writeFile$.pipe(take(1)))
-    .pipe(concatAll())
+const seed = new utils_1.default(store);
+const createSeed$ = rxjs_1.of(seed.addSeed$.pipe(operators_1.take(1)), seed.writeFile$.pipe(operators_1.take(1)))
+    .pipe(operators_1.concatAll())
     .subscribe(data => console.log(data));
+//# sourceMappingURL=seed.js.map

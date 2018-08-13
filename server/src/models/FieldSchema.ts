@@ -2,11 +2,11 @@ import { Schema, model, Model, Document } from 'mongoose';
 
 export const schemaName = 'FieldSchema';
 
-export interface IDocument extends Document {
-    Id: number;
-    Title: string;
+export interface IFieldSchema {
+    Id?: number;
+    Title?: string;
     name: string;
-    label?: string;
+    label: string;
     description?: string;
     options?: [{ idx: number, key: string, value: string }];
     type: string;
@@ -16,6 +16,7 @@ export interface IDocument extends Document {
     Modified?: Date;
 }
 
+export interface IDocument extends IFieldSchema, Document { }
 export interface IModel extends Model<IDocument> { }
 
 export const schema: Schema = new Schema({

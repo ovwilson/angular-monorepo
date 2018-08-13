@@ -7,7 +7,7 @@ context('Schemas', () => {
         name: 'User',
         url: '/users',
         description: 'User Description',
-        documents: [
+        fields: [
             { key: 'firstName', type: 'string', index: false },
             { name: 'lastName', type: 'string', index: false },
             { name: 'email', type: 'string', index: false }
@@ -18,7 +18,7 @@ context('Schemas', () => {
         name: 'Field Types',
         url: '/fieldtypes',
         description: 'Field Types Description',
-        documents: [
+        fields: [
             { key: 'id', value: 'Schema.Types.ObjectId' },
             { key: 'string', value: 'String' },
             { key: 'number', value: 'Number' },
@@ -36,7 +36,7 @@ context('Schemas', () => {
         name: 'Field',
         url: '/fields',
         description: 'Fields Description',
-        documents: [
+        fields: [
             { name: 'name', type: 'string', index: false },
             { name: 'label', type: 'string', index: false },
             { name: 'title', type: 'string', index: false },

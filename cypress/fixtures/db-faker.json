@@ -1,0 +1,123 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ervin Gislason DDS",
+      "email": "Greyson7@yahoo.com"
+    },
+    {
+      "id": 2,
+      "name": "Ricardo Greenfelder",
+      "email": "Brooklyn_Stokes@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Anabel Mohr",
+      "email": "Dejuan_Mertz@hotmail.com"
+    },
+    {
+      "id": 4,
+      "name": "Adolph Zboncak",
+      "email": "Lori69@hotmail.com"
+    },
+    {
+      "id": 5,
+      "name": "Reba Stokes",
+      "email": "Darian_Wiza95@yahoo.com"
+    },
+    {
+      "id": 6,
+      "name": "Thora Douglas",
+      "email": "Allie.Hessel95@gmail.com"
+    },
+    {
+      "id": 7,
+      "name": "Lorine Gulgowski",
+      "email": "Earnestine.Strosin99@gmail.com"
+    },
+    {
+      "id": 8,
+      "name": "Leonard Friesen III",
+      "email": "Sofia_Wolff5@yahoo.com"
+    },
+    {
+      "id": 9,
+      "name": "Carmine Stanton",
+      "email": "Milan_Spencer@yahoo.com"
+    },
+    {
+      "id": 10,
+      "name": "Erika Hettinger",
+      "email": "Ismael.Walker52@gmail.com"
+    }
+  ],
+  "settings": [
+    {
+      "id": 1,
+      "title": "Effertz - Breitenberg",
+      "description": "Qui quidem molestiae. Architecto nihil voluptas assumenda ullam aut excepturi neque. Aut repellendus et officiis exercitationem beatae enim beatae libero eum."
+    },
+    {
+      "id": 2,
+      "title": "Barrows, Toy and Rutherford",
+      "description": "Excepturi qui reprehenderit animi mollitia commodi possimus quis voluptatem. Qui consequuntur impedit ut. Aperiam a sed nihil praesentium ipsa similique. Delectus fuga non animi asperiores dolorum sit. Ipsam sunt pariatur reiciendis dolor soluta aperiam aut. Sed natus qui sed natus id qui."
+    },
+    {
+      "id": 3,
+      "title": "Homenick, Schaden and Haag",
+      "description": "Excepturi quia quo laudantium aspernatur praesentium. Sit eos quis eos nemo ex et sit. Odit hic aut odit et error et. Cupiditate ut unde occaecati perspiciatis. Consectetur alias sed aliquam."
+    },
+    {
+      "id": 4,
+      "title": "Weber, Gusikowski and Wilkinson",
+      "description": "Distinctio et dolorem corrupti sint minima quia architecto. Saepe harum cum impedit praesentium explicabo et qui dolores natus. Qui voluptas voluptas consequatur non id et. Quibusdam occaecati perferendis tenetur nostrum quia ullam quidem. Dolores similique enim saepe quaerat quis velit. Doloremque nobis architecto nemo aut."
+    },
+    {
+      "id": 5,
+      "title": "Keebler, Hessel and Toy",
+      "description": "Incidunt omnis fugiat tenetur quo voluptatibus ullam officiis et quasi. Fuga doloremque velit dolorem iste animi et cumque esse. Quibusdam asperiores harum. Voluptatem corrupti voluptas corporis explicabo maiores ratione."
+    }
+  ],
+  "rules": [
+    {
+      "id": 79853,
+      "value": "Reduced"
+    },
+    {
+      "id": 57566,
+      "value": "Extended"
+    },
+    {
+      "id": 23165,
+      "value": "Robust"
+    },
+    {
+      "id": 61413,
+      "value": "Realigned"
+    },
+    {
+      "id": 11186,
+      "value": "Open-source"
+    },
+    {
+      "id": 64850,
+      "value": "Reduced"
+    },
+    {
+      "id": 93340,
+      "value": "Expanded"
+    },
+    {
+      "id": 19580,
+      "value": "Advanced"
+    },
+    {
+      "id": 66351,
+      "value": "Enhanced"
+    },
+    {
+      "id": 45519,
+      "value": "Vision-oriented"
+    }
+  ]
+}

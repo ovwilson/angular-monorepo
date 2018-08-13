@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express';
 import * as fromUtils from './utils';
 
-class CRUDRoutes {
+class DynamicRoutes {
 
     constructor() { }
 
@@ -46,4 +46,4 @@ class CRUDRoutes {
     }
 }
 
-export default new CRUDRoutes();
+export default new DynamicRoutes();

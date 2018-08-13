@@ -9,14 +9,20 @@ export const findSchema = (request: Request, response: Response) => {
     return SchemaModel.findOne({ name: schemaName }, (err: any, data: any) => err ? response.status(500).send(err) : data);
 };
 
-export const getModel = (doc: SchemaDocument) => models[doc.name];
+export const getModel = (doc: SchemaDocument) => models && models[doc.name] ? models[doc.name] : createDynamicModel(doc.name);
 
 export const createModel = (name: string, fields: FieldSchemaDocument[]) => {
     let fieldAttributes = {};
     fields.map(field => fieldAttributes = Object.assign(fieldAttributes, { [field.name]: getType(field.type) }));
     const schema = new Schema(fieldAttributes);
+    schema.add(DynamicSchema.obj);
     return model(name, schema);
 };
+
+export const createDynamicModel = (name: string) => {
+    const schema = new Schema(DynamicSchema.obj);
+    return model(name, schema);
+}
 
 export const getSchemaModels = () => SchemaModel.find({}, (err: any, data: any) => err ? err : data);
 

@@ -1,19 +1,21 @@
 import { Schema, model, Model, Document } from 'mongoose';
-import { default as FieldSchema, IDocument as FieldSchemaDocument } from './FieldSchema';
+import { schema as FieldSchema, IFieldSchema  } from './FieldSchema';
 
 export const schemaName = 'Schema';
 
-export interface IDocument extends Document {
+export interface ISchema {
   Id?: number;
   Title?: string;
   name: string;
   url: string;
-  tags: string[];
-  description: string;
-  fields?: FieldSchemaDocument[];
+  tags?: string[];
+  description?: string;
+  fields?: IFieldSchema[];
   Created?: Date;
   Modified?: Date;
 }
+
+export interface IDocument extends ISchema, Document {}
 
 export interface IModel extends Model<IDocument> { }
 

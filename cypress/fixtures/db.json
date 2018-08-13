@@ -1,0 +1,35 @@
+{
+  "schemas": [
+    {
+      "name": "User",
+      "url": "/users",
+      "description": "User description",
+      "fields": [
+        {
+          "name": "firstName",
+          "label": "First Name",
+          "type": "string",
+          "required": false,
+          "visible": true
+        },
+        {
+          "name": "lastName",
+          "label": "Last Name",
+          "type": "string",
+          "required": false,
+          "visible": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "type": "string",
+          "required": false,
+          "visible": true
+        }
+      ]
+    }
+  ],
+  "globals": [],
+  "validations": [],
+  "selections": []
+}
