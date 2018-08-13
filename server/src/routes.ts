@@ -2,9 +2,8 @@ import * as express from 'express';
 import { indexRouter } from './routes/Index';
 import counterRouter from './routes/Counter';
 import schemaRouter from './routes/Schemas';
-import fieldSchemaRouter from './routes/FieldSchemas';
-import crudRoutes from './libs/crudRoutes';
-import stores from './libs/stores';
+import dynamicRoutes from './libs/dynamicRoutes';
+import {} from './libs/utils';
 
 class Routes {
   public router: express.Router;
@@ -12,12 +11,8 @@ class Routes {
   constructor() {
     this.router = express.Router();
     this.setCounters();
-    this.setModels();
     this.setCommonRoutes();
-  }
-
-  public setModels() {
-    stores.getModels();
+    this.setDynamicRoutes();
   }
 
   public setCommonRoutes() {
@@ -32,21 +27,20 @@ class Routes {
       .get(schemaRouter.getById)
       .post(schemaRouter.updateById)
       .delete(schemaRouter.deleteById);
+  }
 
-      this.router.route('/fieldschemas')
-      .get(schemaRouter.get)
-      .post(schemaRouter.create)
-      .delete(schemaRouter.deleteAll);
-
-    this.router.route('/fieldschemas/:id')
-      .get(schemaRouter.getById)
-      .post(schemaRouter.updateById)
-      .delete(schemaRouter.deleteById);
+  public setDynamicRoutes() {
 
     this.router.route('*')
-      .get(crudRoutes.get)
-      .post(crudRoutes.create)
-      .delete(crudRoutes.deleteAll);
+      .get(dynamicRoutes.get)
+      .post(dynamicRoutes.create)
+      .delete(dynamicRoutes.deleteAll);
+
+    this.router.route('*/:id')
+      .get(dynamicRoutes.getById)
+      .post(dynamicRoutes.updateById)
+      .delete(dynamicRoutes.deleteById);
+
   }
 
   public setCounters() {

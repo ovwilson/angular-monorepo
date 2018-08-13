@@ -1,22 +1,7 @@
 import { Schema, model, Model, Document } from 'mongoose';
+import { default as FieldSchema, IDocument as FieldSchemaDocument } from './FieldSchema';
 
 export const schemaName = 'Schema';
-
-// export interface IDocumentTypes extends Document {
-//   name: string;
-//   type: string;
-//   index: boolean;
-//   createdAt?: Date;
-//   updatedAt?: Date;
-// }
-
-// export const schemaTypes: Schema = new Schema({
-//   name: String,
-//   type: String,
-//   index: Boolean,
-//   createdAt: { type: Date, default: () => Date.now() },
-//   updatedAt: { type: Date, default: () => Date.now() }
-// });
 
 export interface IDocument extends Document {
   Id?: number;
@@ -25,6 +10,7 @@ export interface IDocument extends Document {
   url: string;
   tags: string[];
   description: string;
+  fields?: FieldSchemaDocument[];
   Created?: Date;
   Modified?: Date;
 }
@@ -38,6 +24,7 @@ export const schema: Schema = new Schema({
   url: String,
   tags: [String],
   description: String,
+  fields: [FieldSchema],
   Created: { type: Date, default: () => Date.now() },
   Modified: { type: Date, default: () => Date.now() }
 });
