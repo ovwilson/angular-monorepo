@@ -22,20 +22,26 @@ describe('Connect to MongoDB', () => {
     connection.close(() => done());
   });
 
+  it('should delete all Schemas', (async () => {
+    schemaModel.remove({}, (err) => expect(err).to.be.a('null'));
+  }));
+
   it('should create Schema', (async () => {
 
     schemaModel.create({ name: 'Test', Title: 'tilllll' }, (err: any, data: any) => {
-      console.log(data);
       expect(data._doc).to.have.property('name');
       expect(data._doc).to.have.property('Title');
     });
 
   }));
 
+  it('should delete all FieldSchemas', (async () => {
+    fieldSchemaModel.remove({}, (err) => expect(err).to.be.a('null'));
+  }));
+
   it('should create FieldSchema', (async () => {
 
     fieldSchemaModel.create({ name: 'Test', Title: 'yo' }, (err: any, data: any) => {
-      console.log(data);
       expect(data._doc).to.have.property('name');
       expect(data._doc).to.have.property('Title');
     });
