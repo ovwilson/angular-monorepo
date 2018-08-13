@@ -34,7 +34,7 @@ class Store {
         };
         models.map(m => {
             state.names = [...state.names, m.name];
-            state.entities = Object.assign(state.entities, { [m.name]: this.createModel(m.name, m.documents) });
+         //   state.entities = Object.assign(state.entities, { [m.name]: this.createModel(m.name, m.documents) });
         });
         this.models$.next({ models: state });
     }
@@ -43,7 +43,7 @@ class Store {
         let data = {};
         documents.map(d => data = Object.assign(data, { [d.name]: this.getType(d.type) }));
         let schema = new Schema(data);
-        console.log(data)
+        console.log(data);
         schema = this.addDefaults(schema);
         return model(name, schema);
     }

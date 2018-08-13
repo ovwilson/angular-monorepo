@@ -2,6 +2,7 @@ import * as express from 'express';
 import { indexRouter } from './routes/Index';
 import counterRouter from './routes/Counter';
 import schemaRouter from './routes/Schemas';
+import fieldSchemaRouter from './routes/FieldSchemas';
 import crudRoutes from './libs/crudRoutes';
 import stores from './libs/stores';
 
@@ -28,6 +29,16 @@ class Routes {
       .delete(schemaRouter.deleteAll);
 
     this.router.route('/schemas/:id')
+      .get(schemaRouter.getById)
+      .post(schemaRouter.updateById)
+      .delete(schemaRouter.deleteById);
+
+      this.router.route('/fieldschemas')
+      .get(schemaRouter.get)
+      .post(schemaRouter.create)
+      .delete(schemaRouter.deleteAll);
+
+    this.router.route('/fieldschemas/:id')
       .get(schemaRouter.getById)
       .post(schemaRouter.updateById)
       .delete(schemaRouter.deleteById);

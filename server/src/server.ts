@@ -4,6 +4,7 @@ import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 import { default as routes } from './routes';
 import { DB } from './libs/db';
+import { Connection } from 'mongoose';
 
 class Server {
   public app: express.Application;

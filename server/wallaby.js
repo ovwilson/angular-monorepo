@@ -11,6 +11,9 @@ module.exports = function (w) {
       env: {
         type: 'node',
         runner: 'node'  // or full path to any node executable
+      },
+      workers: {
+        restart:true
       }
     };
   };

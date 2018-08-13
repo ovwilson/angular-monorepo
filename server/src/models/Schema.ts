@@ -25,7 +25,6 @@ export interface IDocument extends Document {
   url: string;
   tags: string[];
   description: string;
-  documents: any[];
   Created?: Date;
   Modified?: Date;
 }
@@ -39,10 +38,8 @@ export const schema: Schema = new Schema({
   url: String,
   tags: [String],
   description: String,
-  documents: [Schema.Types.Mixed],
-  createdAt: { type: Date, default: () => Date.now() },
-  updatedAt: { type: Date, default: () => Date.now() }
+  Created: { type: Date, default: () => Date.now() },
+  Modified: { type: Date, default: () => Date.now() }
 });
-
 
 export default model<IDocument, IModel>(schemaName, schema);
