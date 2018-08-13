@@ -1,11 +1,11 @@
-module.exports = function () {
+module.exports = function (w) {
     return {
       files: [
-        'server/dist/**/*.js'
+        './src/**/*.ts'
       ],
   
       tests: [
-        'server/test/**/*.spec.js'
+        './test/*.spec.ts'
       ],
   
       env: {
