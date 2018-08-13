@@ -1,12 +1,15 @@
 import { Schema, model, Model, Document } from 'mongoose';
+
 export const schemaName = 'DynamicSchema';
 
-export interface IDocument extends Document {
+export interface IDynamicSchema {
     Id?: number;
     Title?: string;
     Created?: Date;
     Modified?: Date;
 }
+
+export interface IDocument extends IDynamicSchema, Document { }
 
 export interface IModel extends Model<IDocument> { }
 

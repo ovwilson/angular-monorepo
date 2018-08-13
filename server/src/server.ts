@@ -4,7 +4,7 @@ import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 import { default as routes } from './routes';
 import { DB } from './libs/db';
-import { Connection } from 'mongoose';
+import { setModels } from './libs/utils';
 
 class Server {
   public app: express.Application;
@@ -13,10 +13,15 @@ class Server {
   constructor() {
     this.app = express();
     this.config();
+    this.middleware();
   }
 
   public config() {
     new DB().connect();
+    setModels();
+  }
+
+  public middleware() {
     this.app.use(bodyParser.json());
     this.app.use(bodyParser.urlencoded({ extended: false }));
     this.app.use(cors());
@@ -25,6 +30,7 @@ class Server {
       console.log(`Express Server Running on port ${this.PORT}`)
     );
   }
+  
 }
 
 export default new Server().app;
