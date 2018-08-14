@@ -6,7 +6,7 @@ import { Store } from './../models/store';
 import { ISchema } from '../../server/src/models/Schema';
 
 
-const schemas: ISchema[] = [
+const userSchema: ISchema[] = [
     {
         name: 'User',
         url: '/users',
@@ -16,7 +16,10 @@ const schemas: ISchema[] = [
             { name: 'lastName', label: 'Last Name', type: 'string', required: false, visible: true },
             { name: 'email', label: 'Email', type: 'string', required: false, visible: true }
         ]
-    },
+    }
+];
+
+const fieldTypesSchema: ISchema[] = [
     {
         name: 'Field Types',
         url: '/fieldtypes',
@@ -41,7 +44,8 @@ const store: Store = {
     fileFormat: 'utf8',
     file: '',
     schema: {
-        schemas: schemas,
+        users: userSchema,
+        fieldtypes: fieldTypesSchema,
         globals: [],
         validations: [],
         selections: []

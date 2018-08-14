@@ -4,13 +4,6 @@ context('Schemas', () => {
 
     const uri = '/schemas';
 
-    before(done => {
-        // Get Fixtures
-
-        done();
-    });
-
-
     it('[Schemas] Delete All', () => {
 
         cy.request('DELETE', uri)
@@ -20,29 +13,29 @@ context('Schemas', () => {
             });
     });
 
-    // it('[Schemas] Create User Schema ', () => {
+    it('[Schemas] Create User Schemas ', () => {
 
-    //     cy.request('POST', uri, db.)
-    //         .then((response) => {
-    //             expect(response.status).to.eq(200);
-    //             expect(response.body).to.have.property('name', 'User');
-    //             cy.log(`Name ${response.body.name}`);
-    //             cy.log(`Url ${response.body.url}`);
-    //             cy.log(`description ${response.body.description}`);
-    //             cy.log(`${response.body.documents.length} records found.`);
-    //         });
-    // });
+        cy.request('POST', uri, db.users[0])
+            .then((response) => {
+                expect(response.status).to.eq(200);
+                expect(response.body).to.have.property('name', 'User');
+                cy.log(`Name ${response.body.name}`);
+                cy.log(`Url ${response.body.url}`);
+                cy.log(`description ${response.body.description}`);
+                cy.log(`${response.body.fields.length} fields found.`);
+            });
+    });
 
     it('Schema Create FieldTypes Schema', () => {
 
-        cy.request('POST', uri, db.fieldtypes)
+        cy.request('POST', uri, db.fieldtypes[0])
             .then((response) => {
                 expect(response.status).to.eq(200);
                 expect(response.body).to.have.property('name', 'Field Types');
                 cy.log(`Name ${response.body.name}`);
                 cy.log(`Url ${response.body.url}`);
                 cy.log(`description ${response.body.description}`);
-                cy.log(`${response.body.documents.length} records found.`);
+                cy.log(`${response.body.fields.length} fields found.`);
             });
     });
 

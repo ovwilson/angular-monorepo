@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const rxjs_1 = require("rxjs");
 const operators_1 = require("rxjs/operators");
 const utils_1 = require("./utils");
-const schemas = [
+const userSchema = [
     {
         name: 'User',
         url: '/users',
@@ -13,7 +13,9 @@ const schemas = [
             { name: 'lastName', label: 'Last Name', type: 'string', required: false, visible: true },
             { name: 'email', label: 'Email', type: 'string', required: false, visible: true }
         ]
-    },
+    }
+];
+const fieldTypesSchema = [
     {
         name: 'Field Types',
         url: '/fieldtypes',
@@ -37,7 +39,8 @@ const store = {
     fileFormat: 'utf8',
     file: '',
     schema: {
-        schemas: schemas,
+        users: userSchema,
+        fieldtypes: fieldTypesSchema,
         globals: [],
         validations: [],
         selections: []

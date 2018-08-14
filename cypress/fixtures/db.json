@@ -1,5 +1,5 @@
 {
-  "schemas": [
+  "users": [
     {
       "name": "User",
       "url": "/users",
@@ -27,7 +27,9 @@
           "visible": true
         }
       ]
-    },
+    }
+  ],
+  "fieldtypes": [
     {
       "name": "Field Types",
       "url": "/fieldtypes",
