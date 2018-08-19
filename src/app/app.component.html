@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div [@loadAnimation]="animationState" style="text-align:center">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -18,3 +18,10 @@
   </li>
 </ul>
 
+<div [@wireframeAnimation]="animationState">
+    <h1>Ease -out Ease in</h1>
+</div>
+
+<div [@loadAnimation]="animationState">
+  <h1>Load Opacity</h1>
+</div>
