@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy, HostBinding } from '@angular/core';
-import { slideInDownAnimation} from './../app.animations';
+import { slideInDownAnimation } from './../app.animations';
 
 @Component({
   selector: 'home',
@@ -9,11 +9,13 @@ import { slideInDownAnimation} from './../app.animations';
 })
 export class HomeComponent implements OnInit {
 
-  @HostBinding('@routeAnimation') routeAnimation = true;
-  @HostBinding('style.display') display = 'block';
-  @HostBinding('style.position') position = 'relative';
+   @HostBinding('@routeAnimation') routeAnimation = 1;
+   @HostBinding('style.display') display = 'block';
+   @HostBinding('style.position') position = 'relative';
+
 
   constructor() { }
+
 
   ngOnInit() {
   }

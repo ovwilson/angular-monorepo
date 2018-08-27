@@ -12,13 +12,13 @@ mat-sidenav-container {
 
 .home {
     margin: 20px;
-    mat-card > div > mat-toolbar {
+    mat-card>div>mat-toolbar {
         height: 30px !important;
     }
 }
 
-.mat-form-field{
-    width:100%;
+.mat-form-field {
+    width: 100%;
 }
 
 .main {
@@ -36,4 +36,16 @@ mat-sidenav-container {
 
 .hidden {
     display: none;
+}
+
+.router-outlet {
+    display: none;
+}
+
+.route-container {
+    position: relative;
+}
+
+.route-container>* {
+    display: block;
 }

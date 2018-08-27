@@ -8,8 +8,7 @@ import { slideInDownAnimation } from './../app.animations';
 })
 export class DashboardComponent {
 
-
-  @HostBinding('@routeAnimation') routeAnimation = true;
+  @HostBinding('@routeAnimation') routeAnimation = 2;
   @HostBinding('style.display') display = 'block';
   @HostBinding('style.position') position = 'relative';
 
