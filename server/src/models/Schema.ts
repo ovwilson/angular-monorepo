@@ -1,5 +1,5 @@
 import { Schema, model, Model, Document } from 'mongoose';
-import { schema as FieldSchema, IFieldSchema } from './FieldSchema';
+import { schema as SectionSchema, ISectionSchema } from './SectionSchema';
 
 export const schemaName = 'Schema';
 
@@ -15,7 +15,7 @@ export interface ISchema {
   url: string;
   tags?: string[];
   description?: string;
-  fields?: IFieldSchema[];
+  sections?: ISectionSchema[];
   Created?: Date;
   Modified?: Date;
 }
@@ -37,7 +37,7 @@ export const schema: Schema = new Schema({
   url: String,
   tags: [String],
   description: String,
-  fields: [FieldSchema],
+  sections: [SectionSchema],
   Created: { type: Date, default: () => Date.now() },
   Modified: { type: Date, default: () => Date.now() }
 });

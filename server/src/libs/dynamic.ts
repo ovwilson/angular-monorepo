@@ -22,7 +22,7 @@ class Dynamic {
 
     setModels() {
         // Do rxjs here
-        SchemaModel.find({}).then((docs: ISchema[]) => docs.map(doc => this.createDynamicModel(doc.name, doc.fields)));
+       // SchemaModel.find({}).then((docs: ISchema[]) => docs.map(doc => this.createDynamicModel(doc.name, doc.fields)));
     }
 
 

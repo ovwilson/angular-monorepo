@@ -11,7 +11,6 @@ import { schema, default as DynamicModel } from './../src/models/DynamicSchema';
 import { DB } from './../src/libs/db';
 import * as faker from 'faker';
 
-
 describe('Dynamic Schema Utils', () => {
 
   let connection;

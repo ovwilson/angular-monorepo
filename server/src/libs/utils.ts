@@ -20,10 +20,10 @@ import { default as DynamicSchemaModel, schema as DynamicSchema, IDynamicSchema 
 //     return DynamicSchemaModel;
 // };
 
-export const setModels = () => {
-    const schemaModels = getSchemaModels();
-    schemaModels.then(docs => docs.map(doc => createModel(doc.name, doc.fields)));
-};
+// export const setModels = () => {
+//     const schemaModels = getSchemaModels();
+//     schemaModels.then(docs => docs.map(doc => createModel(doc.name, doc.fields)));
+// };
 
 
 

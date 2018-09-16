@@ -3,7 +3,7 @@ import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 import { default as routes } from './routes';
 import { DB } from './libs/db';
-import { setModels } from './libs/utils';
+import {  } from './libs/dynamic';
 
 class Server {
   public app: express.Application;
@@ -17,7 +17,7 @@ class Server {
 
   public config() {
     new DB().connect();
-    setModels();
+   // setModels();
   }
 
   public middleware() {

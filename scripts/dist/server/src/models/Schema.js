@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const mongoose_1 = require("mongoose");
-const FieldSchema_1 = require("./FieldSchema");
+const SectionSchema_1 = require("./SectionSchema");
 exports.schemaName = 'Schema';
 exports.schema = new mongoose_1.Schema({
     Id: Number,
@@ -10,15 +10,12 @@ exports.schema = new mongoose_1.Schema({
     url: String,
     tags: [String],
     description: String,
-    fields: [FieldSchema_1.schema],
+    sections: [SectionSchema_1.schema],
     Created: { type: Date, default: () => Date.now() },
     Modified: { type: Date, default: () => Date.now() }
 });
 exports.schema.statics.createDoc = function (body, cb) {
     return this.create(body, cb);
-};
-exports.schema.statics.findAll = function (cb) {
-    return this.find({}, cb);
 };
 exports.schema.statics.findByUrl = function (url, cb) {
     return this.findOne({ name: this.convertName(url) }, cb);

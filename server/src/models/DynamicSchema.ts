@@ -31,9 +31,9 @@ schema.statics.createModel = function (name: string) {
 };
 
 schema.statics.createModelWithFields = function (name: string, fields: IFieldSchema[]) {
-    const schemaDynamic = new Schema(this.setFieldAttrs(name, fields));
-    schemaDynamic.add(schema.obj);
-    return model(name, new Schema(schemaDynamic));
+    // const schemaDynamic = new Schema(this.setFieldAttrs(name, fields));
+    // schemaDynamic.add(schema.obj);
+    // return model(name, new Schema(schemaDynamic));
 };
 
 schema.methods.setFieldAttrs = function (name: string, fields: IFieldSchema[]) {
