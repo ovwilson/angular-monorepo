@@ -1,4 +1,5 @@
 import { Request, Response, NextFunction } from 'express';
+import { default as SchemaModel, ISchema } from './../models/Schema';
 import * as fromUtils from './utils';
 
 class DynamicRoutes {

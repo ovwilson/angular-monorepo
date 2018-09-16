@@ -1,9 +1,9 @@
 import { of } from 'rxjs';
 import { concatAll, take } from 'rxjs/operators';
-import * as faker from 'faker';
 import { default as Seed } from './utils';
 import { Store } from './../models/store';
-import { ISchema } from '../../server/src/models/Schema';
+import { ISchema, KeyPair } from '../../server/src/models/Schema';
+import { Schema } from 'mongoose';
 
 
 const userSchema: ISchema[] = [

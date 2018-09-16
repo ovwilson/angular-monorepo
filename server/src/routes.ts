@@ -2,7 +2,7 @@ import * as express from 'express';
 import { indexRouter } from './routes/Index';
 import counterRouter from './routes/Counter';
 import schemaRouter from './routes/Schemas';
-import dynamicRoutes from './libs/dynamicRoutes';
+import dynamicRouter from './routes/DynamicSchemas';
 
 class Routes {
   public router: express.Router;
@@ -30,15 +30,15 @@ class Routes {
 
   public setDynamicRoutes() {
 
-    this.router.route('*')
-      .get(dynamicRoutes.get)
-      .post(dynamicRoutes.create)
-      .delete(dynamicRoutes.deleteAll);
+    this.router.route('/dynamic')
+      .get(dynamicRouter.get)
+      .post(dynamicRouter.create)
+      .delete(dynamicRouter.deleteAll);
 
-    this.router.route('*/:id')
-      .get(dynamicRoutes.getById)
-      .post(dynamicRoutes.updateById)
-      .delete(dynamicRoutes.deleteById);
+    this.router.route('dynamic/:id')
+      .get(dynamicRouter.getById)
+      .post(dynamicRouter.updateById)
+      .delete(dynamicRouter.deleteById);
 
   }
 

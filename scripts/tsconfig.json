@@ -6,15 +6,12 @@
         "moduleResolution": "node",
         "sourceMap": true,
         "outDir": "dist",
-        "baseUrl": ".",
-        "typeRoots": [
-            "../node_modules/@types/shelljs"
-        ],
-        "paths": {
-           "*": [
-               "node_modules/*"
-           ]
-        }
+        "baseUrl": "./",
+        "types": [
+            "shelljs",
+            "faker",
+            "node"
+        ]
     },
     "exclude": [
         "node_modules"
@@ -22,4 +19,4 @@
     "include": [
         "./**/*"
     ]
-  }
+}
