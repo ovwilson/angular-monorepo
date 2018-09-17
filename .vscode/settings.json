@@ -4,5 +4,6 @@
             "url": "mongodb://localhost:27017",
             "activeOnStartUp": true
         }
-    }
+    },
+    "typescript.tsdk": "node_modules/typescript/lib"
 }
