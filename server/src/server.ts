@@ -2,8 +2,8 @@ import * as express from 'express';
 import * as bodyParser from 'body-parser';
 import * as cors from 'cors';
 import { default as routes } from './routes';
-import { DB } from './libs/db';
-import {  } from './libs/dynamic';
+import { default as DB } from './libs/db';
+import { default as Dynamic } from './libs/dynamic';
 
 class Server {
   public app: express.Application;
@@ -16,7 +16,7 @@ class Server {
   }
 
   public config() {
-    new DB().connect();
+    DB.connect();
    // setModels();
   }
 

@@ -1,6 +1,6 @@
 import mongoose = require('mongoose');
 
-export class DB {
+class DB {
   constructor() { mongoose.Promise = global.Promise; }
   connect() {
     mongoose.connect(process.env.LOCAL_DB, { useNewUrlParser: true });
@@ -12,3 +12,5 @@ export class DB {
     return mongoose.createConnection(process.env.LOCAL_DB, { useNewUrlParser: true });
   }
 }
+
+export default new DB();
