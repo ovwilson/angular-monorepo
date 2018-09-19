@@ -9,6 +9,17 @@ interface FieldDictionary {
     [field: string]: IFieldSchema;
 }
 
+interface DuplicateDictonary {
+    [field: string]: { sectionName: string, fields: IFieldSchema };
+}
+
+interface Duplicates {
+    section: string;
+    field: IFieldSchema;
+    dupSection: string;
+    dupField: IFieldSchema;
+}
+
 export const createSectionDictionary = (sections: ISectionSchema[]) => {
     let dictionary: SectionDictionary = {};
     sections.map(val => dictionary = Object.assign({}, dictionary,
@@ -43,10 +54,9 @@ export const appendSection = (dictionary: SectionDictionary, section: ISectionSc
     return dictionary;
 };
 
-export const createFieldDictionary = (fields: IFieldSchema[]): FieldDictionary{
+export const createFieldDictionary = (fields: IFieldSchema[]): FieldDictionary => {
     const dictionary: FieldDictionary = {};
     fields.map(field => dictionary[field.name] = field);
     return dictionary;
 };
-
 
