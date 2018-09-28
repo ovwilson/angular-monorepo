@@ -1,0 +1,37 @@
+<h1>Steppers</h1>
+
+<button mat-raised-button>
+
+</button>
+
+<mat-vertical-stepper [linear]="isLinear" #stepper>
+
+    <ng-template matStepperIcon="edit">
+        <mat-icon>edit</mat-icon>
+    </ng-template>
+
+    
+
+    <ng-template matStepperIcon="number">
+        <mat-icon>assignment</mat-icon>
+    </ng-template>
+
+
+    <mat-step label="General">
+
+        <ul>
+            <li>ONe</li>
+            <li>two</li>
+        </ul>
+    </mat-step>
+
+    <mat-step label="Unused">
+        <ul>
+            <li>three</li>
+            <li>four</li>
+        </ul>
+    </mat-step>
+    <mat-step label="Location">
+
+    </mat-step>
+</mat-vertical-stepper>

@@ -128,7 +128,7 @@
     "@angular-devkit/core" "0.7.2"
     rxjs "^6.0.0"
 
-"@angular-devkit/schematics@^0.7.3":
+"@angular-devkit/schematics@0.7.5", "@angular-devkit/schematics@^0.7.3":
   version "0.7.5"
   resolved "https://registry.yarnpkg.com/@angular-devkit/schematics/-/schematics-0.7.5.tgz#f46b121f29cb40ad6095285d27a515114a56c5d6"
   dependencies:
@@ -366,6 +366,14 @@
     "@angular-devkit/schematics" "0.7.2"
     typescript ">=2.6.2 <2.8"
 
+"@schematics/angular@^0.7.3":
+  version "0.7.5"
+  resolved "https://registry.yarnpkg.com/@schematics/angular/-/angular-0.7.5.tgz#ccb5ce587161b24042195e100be556ae19b3b7f6"
+  dependencies:
+    "@angular-devkit/core" "0.7.5"
+    "@angular-devkit/schematics" "0.7.5"
+    typescript ">=2.6.2 <2.10"
+
 "@schematics/update@0.7.2":
   version "0.7.2"
   resolved "https://registry.yarnpkg.com/@schematics/update/-/update-0.7.2.tgz#2d2db1e1235ba44d309529292373a5d0ff23e352"
@@ -384,12 +392,6 @@
 "@types/bluebird@3.5.18":
   version "3.5.18"
   resolved "https://registry.yarnpkg.com/@types/bluebird/-/bluebird-3.5.18.tgz#6a60435d4663e290f3709898a4f75014f279c4d6"
-
-"@types/bson@^1.0.11":
-  version "1.0.11"
-  resolved "https://registry.yarnpkg.com/@types/bson/-/bson-1.0.11.tgz#c95ad69bb0b3f5c33b4bb6cc86d86cafb273335c"
-  dependencies:
-    "@types/node" "*"
 
 "@types/chai-jquery@1.1.35":
   version "1.1.35"
@@ -452,9 +454,9 @@
   version "10.5.7"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-10.5.7.tgz#960d9feb3ade2233bcc9843c918d740b4f78a7cf"
 
-"@types/node@^10.5.8":
-  version "10.9.1"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.9.1.tgz#06f002136fbcf51e730995149050bb3c45ee54e6"
+"@types/node@^10.10.1":
+  version "10.11.2"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-10.11.2.tgz#59508b88ce90fe2742f7b8414c6f5db3e359570d"
 
 "@types/node@^6.0.46":
   version "6.0.116"
@@ -700,10 +702,13 @@ amdefine@>=0.0.4:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/amdefine/-/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
 
-angular-playground@^5.0.1:
-  version "5.0.1"
-  resolved "https://registry.yarnpkg.com/angular-playground/-/angular-playground-5.0.1.tgz#d64206d4737b2659202891ef43adee4db644bf69"
+angular-playground@^5.1.3:
+  version "5.1.3"
+  resolved "https://registry.yarnpkg.com/angular-playground/-/angular-playground-5.1.3.tgz#a81b7375311e05452d95e5a846c0990bcf2a7914"
   dependencies:
+    "@angular-devkit/core" "^0.7.3"
+    "@angular-devkit/schematics" "^0.7.3"
+    "@schematics/angular" "^0.7.3"
     async "^2.6.0"
     chalk "^2.4.1"
     commander "^2.15.1"
@@ -6974,13 +6979,13 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
 
+"typescript@>=2.6.2 <2.10", typescript@^2.5.2, typescript@~2.9.1:
+  version "2.9.2"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.9.2.tgz#1cbf61d05d6b96269244eb6a3bce4bd914e0f00c"
+
 "typescript@>=2.6.2 <2.8", typescript@~2.7.2:
   version "2.7.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.7.2.tgz#2d615a1ef4aee4f574425cdff7026edf81919836"
-
-typescript@^2.5.2, typescript@~2.9.1:
-  version "2.9.2"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.9.2.tgz#1cbf61d05d6b96269244eb6a3bce4bd914e0f00c"
 
 uglify-es@^3.3.4:
   version "3.3.10"
