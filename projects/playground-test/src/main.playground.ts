@@ -3,13 +3,13 @@ import {  PlaygroundModule } from 'angular-playground';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { SharedModule } from './app/shared/shared.module';
+import { SharedMaterialModule} from './app/shared/shared.material.module';
 
 PlaygroundModule
   .configure({
     selector: 'app-root',
     overlay: false,
-    modules: [ BrowserModule, BrowserAnimationsModule, SharedModule]
+    modules: [ BrowserModule, BrowserAnimationsModule, SharedMaterialModule]
   });
 
 platformBrowserDynamic().bootstrapModule(PlaygroundModule);
