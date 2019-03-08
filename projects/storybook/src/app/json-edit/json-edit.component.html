@@ -1,0 +1,18 @@
+<mat-toolbar>JSON Editor</mat-toolbar>
+
+<section gdColumnsAlign="center stretch" gdColumns="repeat(4,1fr)" gdRows="10px 300px" gdGap="20px" gdAreas=". . . . | . a b .">
+    <section gdArea="a">
+        <h1>Data</h1>
+        <pre>{{getData() | json }}</pre>
+        <!-- <div *ngFor="let attr of data$ | async"> -->
+
+            <!-- <app-accordion [title]="attr?.title"></app-accordion> -->
+        <!-- </div> -->
+
+    </section>
+    <section gdArea="b">
+        <h1>MetaData</h1>
+        <pre>{{data$ | async | json}}</pre>
+    </section>
+    
+</section>
